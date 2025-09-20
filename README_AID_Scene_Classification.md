@@ -43,7 +43,7 @@ Amaç, farklı sahneleri (örneğin havaalanı, park, köprü, yerleşim alanı 
 ---
 
 ## 🚀 Çalıştırma Adımları
-1. Kaggle Notebook açın.  
+1. Kaggle Notebook açın. Kaggle notebook linki: https://www.kaggle.com/code/enesgleryz/havasina  
 2. Dataset yolunu şu şekilde ayarlayın:  
    ```python
    base_path = "/kaggle/input/aid-scene-classification-datasets/AID"
