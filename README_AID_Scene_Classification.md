@@ -1,18 +1,49 @@
-# AID - Aerial Scene Classification
+# 🌍 AID Scene Classification - Derin Öğrenme Projesi
 
-**Proje amacı**: Havadan çekilmiş görüntülerden sahne sınıfı tahmini yapmak (30 sınıf).
+## 📌 Proje Hakkında
+Bu proje, Akbank Derin Öğrenme Bootcamp kapsamında verilen *AID (Scene Classification)* veri seti üzerinde gerçekleştirilmiştir.  
+Amaç, farklı sahneleri (örneğin havaalanı, park, köprü, yerleşim alanı vb.) görüntülerden otomatik olarak sınıflandırabilen bir derin öğrenme modeli geliştirmektir.
 
-**Veri seti**: AID dataset (Kaggle/HuggingFace). Klasör yapısı: train/, val/, test/
+---
 
-**Kullanılan yöntemler**:
-- Veri ön işleme: Resize(128/224), normalization
-- Data augmentation: rotation, flip, color jitter (opsiyonel)
-- Model: Basit CNN veya Transfer Learning (ResNet50)
-- Eğitim: EarlyStopping
+## 🗂 Kullanılan Veri Seti
+- *Dataset*: AID Scene Classification
+- *Kaynak*: Kaggle dataset
+- *Klasör yapısı*: train/, val/, test/ alt dizinlerinde sınıf bazlı ayrım mevcuttur.
 
-**Değerlendirme**:
-- Accuracy & Loss grafikleri
-- Confusion Matrix
-- Örnek tahmin görselleştirmeleri
+---
 
-**Kaggle Notebook**: (Kaggle notebook linkinizi buraya yapıştırın)
+## ⚙ Kullanılan Yöntemler
+- *Veri Ön İşleme*:
+  - ImageDataGenerator ile tüm resimler yeniden ölçeklendirildi (128x128).
+  - Train/Validation/Test ayrımı yapıldı.
+- *Model*:
+  - Basit CNN modeli kuruldu (Conv2D + MaxPooling + Dense).
+  - Adam optimizer, categorical_crossentropy loss fonksiyonu kullanıldı.
+- *Eğitim*:
+  - Model belirli epoch sayısı boyunca eğitildi.
+  - Eğitim ve doğrulama doğruluk/loss grafikleri çıkarıldı.
+
+---
+
+## 📊 Sonuçlar
+- Eğitim / Doğrulama *Accuracy & Loss grafikleri* elde edildi.
+- *Confusion Matrix* oluşturuldu → hangi sınıfların karıştırıldığını görselleştirdi.
+- *Classification Report* alındı → precision, recall ve f1-score değerleri incelendi.
+- (Not: Grad-CAM bu projede uygulanmamıştır.)
+
+---
+
+## 📂 Çıktılar
+- Model .h5 formatında kaydedildi.
+- Accuracy & Loss grafik ekran görüntüleri.
+- Confusion Matrix görselleştirmesi.
+- Classification Report çıktısı.
+
+---
+
+## 🚀 Çalıştırma Adımları
+1. Kaggle Notebook açın.  
+2. Dataset yolunu şu şekilde ayarlayın:  
+   ```python
+   base_path = "/kaggle/input/aid-scene-classification-datasets/AID"
